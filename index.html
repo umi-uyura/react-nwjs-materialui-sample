@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>React on NW.js with Material UI</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="build/bundle.css" />
+    <script>
+     var path = './';
+     var fs = require('fs');
+
+     fs.watch(path, { recursive: true }, function() {
+       if (location)
+         location.reload();
+     });
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="build/bundle.js"></script>
+  </body>
+</html>

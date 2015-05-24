@@ -1,0 +1,30 @@
+{
+  "name": "react-nwjs-materialui-sample",
+  "version": "0.0.1",
+  "description": "React on NW.js with Material UI sample",
+  "main": "index.html",
+  "scripts": {
+    "start": "nw",
+    "browserify": "browserify build/app.js -o build/bundle.js",
+    "reactify": "browserify -t reactify src/app.jsx -o build/bundle.js",
+    "watchify": "watchify -t reactify src/app.jsx -o build/bundle.js -v",
+    "lessc": "lessc style/bundle.less build/bundle.css",
+    "package": "nwbuild -p osx64,win64 .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Umi Uyura",
+  "license": "MIT",
+  "dependencies": {
+    "less": "^2.5.1",
+    "material-ui": "^0.7.5",
+    "nw": "^0.12.0-1",
+    "react": "^0.13.3",
+    "react-tap-event-plugin": "^0.1.7"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.0",
+    "node-webkit-builder": "^1.0.11",
+    "reactify": "^1.1.1",
+    "watchify": "^3.2.1"
+  }
+}
