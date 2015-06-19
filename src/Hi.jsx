@@ -1,9 +1,9 @@
 'use strict';
 
 var React = require('react');
-var MUI = require('material-ui');
+var mui = require('material-ui');
 
-var RaisedButton = MUI.RaisedButton;
+var RaisedButton = mui.RaisedButton;
 
 var Hi = React.createClass({
   doClick: function() {
