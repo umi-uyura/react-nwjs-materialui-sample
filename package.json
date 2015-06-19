@@ -5,9 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "nw",
-    "browserify": "browserify build/app.js -o build/bundle.js",
-    "reactify": "browserify -t reactify src/app.jsx -o build/bundle.js",
-    "watchify": "watchify -t reactify src/app.jsx -o build/bundle.js -v",
+    "babelify": "browserify -t babelify src/app.jsx -o build/bundle.js",
+    "watchify": "watchify -t babelify src/app.jsx -o build/bundle.js -v",
     "lessc": "lessc style/bundle.less build/bundle.css",
     "package": "nwbuild -p osx64,win64 .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,9 +21,9 @@
     "react-tap-event-plugin": "^0.1.7"
   },
   "devDependencies": {
+    "babelify": "^6.1.2",
     "browserify": "^10.2.0",
     "node-webkit-builder": "^1.0.11",
-    "reactify": "^1.1.1",
     "watchify": "^3.2.1"
   }
 }

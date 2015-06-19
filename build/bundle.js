@@ -28396,10 +28396,16 @@ module.exports = require('./lib/React');
 
 var React = require('react');
 
-var Hello = React.createClass({displayName: "Hello",
-  render: function() {
-    return (
-      React.createElement("h1", null, "Hello, ", this.props.name, " World !!!")
+var Hello = React.createClass({
+  displayName: 'Hello',
+
+  render: function render() {
+    return React.createElement(
+      'h1',
+      null,
+      'Hello, ',
+      this.props.name,
+      ' World !!!'
     );
   }
 });
@@ -28414,14 +28420,14 @@ var MUI = require('material-ui');
 
 var RaisedButton = MUI.RaisedButton;
 
-var Hi = React.createClass({displayName: "Hi",
-  doClick: function() {
+var Hi = React.createClass({
+  displayName: 'Hi',
+
+  doClick: function doClick() {
     alert('Hi !');
   },
-  render: function() {
-    return (
-      React.createElement(RaisedButton, {label: "Hi", primary: true, onClick: this.doClick})
-    );
+  render: function render() {
+    return React.createElement(RaisedButton, { label: 'Hi', primary: true, onClick: this.doClick });
   }
 });
 
@@ -28430,21 +28436,20 @@ module.exports = Hi;
 },{"material-ui":2,"react":247}],250:[function(require,module,exports){
 'use strict';
 
-(function() {
+(function () {
   var React = require('react');
-  var injectTapEventPlugin = require("react-tap-event-plugin");
+  var injectTapEventPlugin = require('react-tap-event-plugin');
   injectTapEventPlugin();
 
   var Hello = require('./Hello.jsx');
   var Hi = require('./Hi.jsx');
 
-  React.render(
-    React.createElement("div", null, 
-      React.createElement(Hello, {name: "Material"}), 
-      React.createElement(Hi, null)
-    ),
-    document.getElementById('app')
-  );
+  React.render(React.createElement(
+    'div',
+    null,
+    React.createElement(Hello, { name: 'Material' }),
+    React.createElement(Hi, null)
+  ), document.getElementById('app'));
 })();
 
 },{"./Hello.jsx":248,"./Hi.jsx":249,"react":247,"react-tap-event-plugin":74}]},{},[250]);
