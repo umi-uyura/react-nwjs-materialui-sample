@@ -24,7 +24,7 @@
       var style = {
         width: '100%',
         height: '100%',
-        backgroundColor: mui.Styles.Colors.deepPurpleA400
+        backgroundColor: mui.Styles.Colors.deepPurpleA100
       };
 
       return (
