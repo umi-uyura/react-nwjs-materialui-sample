@@ -21,8 +21,14 @@
       };
     },
     render: function() {
+      var style = {
+        width: '100%',
+        height: '100%',
+        backgroundColor: mui.Styles.Colors.deepPurpleA400
+      };
+
       return (
-        <div>
+        <div style={style}>
           <Hello name='Material' />
           <Hi />
         </div>

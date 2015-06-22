@@ -37588,9 +37588,15 @@ module.exports = Hi;
       };
     },
     render: function render() {
+      var style = {
+        width: "100%",
+        height: "100%",
+        backgroundColor: mui.Styles.Colors.deepPurpleA400
+      };
+
       return React.createElement(
         "div",
-        null,
+        { style: style },
         React.createElement(Hello, { name: "Material" }),
         React.createElement(Hi, null)
       );
