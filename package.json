@@ -1,6 +1,6 @@
 {
   "name": "react-nwjs-materialui-sample",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React on NW.js with Material UI sample",
   "main": "index.html",
   "scripts": {
