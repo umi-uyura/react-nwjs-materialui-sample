@@ -2,16 +2,17 @@
   "name": "react-nwjs-materialui-sample",
   "version": "0.0.2",
   "description": "React on NW.js with Material UI sample",
-  "main": "index.html",
+  "main": "src/index.html",
   "scripts": {
     "start": "nw",
     "babelify": "browserify -t babelify src/jsx/app.jsx -o src/js/bundle.js",
     "watchify": "watchify -t babelify src/jsx/app.jsx -o src/js/bundle.js -v",
     "dist:mkdir": "mkdir -p build",
-    "dist:copy": "cp src/index.html build && cp package.json build && cp -R src/js build && cp -R src/css build",
+    "dist:copy": "cp src/index.html build && cp -R src/js build && cp -R src/css build",
+    "dist:config": "cat package.json package-dist.json | $(npm bin)/json --merge > build/package.json",
     "dist:npm": "cd build && npm install --production",
     "dist:build": "nwbuild -p osx64,win64 -v 0.12.3 -o dist build",
-    "dist": "npm run babelify && npm run dist:mkdir && npm run dist:copy && npm run dist:npm && npm run dist:build",
+    "dist": "npm run babelify && npm run dist:mkdir && npm run dist:copy && npm run dist:config && npm run dist:npm && npm run dist:build",
     "clean": "rm -rf build/* && rm -rf dist/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +27,7 @@
   "devDependencies": {
     "babelify": "^6.3.0",
     "browserify": "^11.0.1",
+    "json": "^9.0.3",
     "nw-builder": "^2.0.2",
     "watchify": "^3.3.1"
   }
