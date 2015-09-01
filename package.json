@@ -5,9 +5,14 @@
   "main": "index.html",
   "scripts": {
     "start": "nw",
-    "babelify": "browserify -t babelify src/app.jsx -o build/bundle.js",
-    "watchify": "watchify -t babelify src/app.jsx -o build/bundle.js -v",
-    "package": "nwbuild -p osx64,win64 . -v v0.12.2",
+    "babelify": "browserify -t babelify src/jsx/app.jsx -o src/js/bundle.js",
+    "watchify": "watchify -t babelify src/jsx/app.jsx -o src/js/bundle.js -v",
+    "dist:mkdir": "mkdir -p build",
+    "dist:copy": "cp src/index.html build && cp package.json build && cp -R src/js build && cp -R src/css build",
+    "dist:npm": "cd build && npm install --production",
+    "dist:build": "nwbuild -p osx64,win64 -v 0.12.3 -o dist build",
+    "dist": "npm run babelify && npm run dist:mkdir && npm run dist:copy && npm run dist:npm && npm run dist:build",
+    "clean": "rm -rf build/* && rm -rf dist/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Umi Uyura",
